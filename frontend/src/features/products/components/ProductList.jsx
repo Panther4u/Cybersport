@@ -257,13 +257,21 @@ export const ProductList = () => {
             
 
                 {/* banners section */}
-                {
-                    !is600 && 
-                
-                <Stack sx={{width:"100%",height:is800?"300px":is1200?"400px":"500px"}}>
-                    <ProductBanner images={bannerImages}/>
-                </Stack>
-                }
+                <Stack
+    sx={{
+        width: "100%",
+        height: {
+            xs: "200px", // For small devices like phones
+            sm: "300px", // For tablets
+            md: "400px", // For small laptops
+            lg: "500px", // For desktops
+            xl: "600px", // For large screens
+        },
+    }}
+>
+    <ProductBanner images={bannerImages} />
+</Stack>
+
 
                 {/* products */}
                 <Stack rowGap={5} mt={is600?2:0}>
